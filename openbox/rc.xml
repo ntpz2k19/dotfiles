@@ -19,7 +19,7 @@
     <primaryMonitor>Mouse</primaryMonitor>
   </placement>
   <theme>
-    <name>Numix-BLACK-Grape</name>
+    <name>Numix-BLACK-Ice</name>
     <titleLayout>LIMC</titleLayout>
     <keepBorder>no</keepBorder>
     <animateIconify>no</animateIconify>
@@ -42,19 +42,19 @@
       <slant>Normal</slant>
     </font>
     <font place="MenuItem">
-      <name>sans</name>
+      <name>UbuntuMono Nerd Font</name>
       <size>10</size>
       <weight>Normal</weight>
       <slant>Normal</slant>
     </font>
     <font place="ActiveOnScreenDisplay">
-      <name>sans</name>
+      <name>UbuntuMono Nerd Font</name>
       <size>10</size>
       <weight>Normal</weight>
       <slant>Normal</slant>
     </font>
     <font place="InactiveOnScreenDisplay">
-      <name>sans</name>
+      <name>UbuntuMono Nerd Font</name>
       <size>10</size>
       <weight>Normal</weight>
       <slant>Normal</slant>
@@ -129,7 +129,7 @@
     <keybind key="Alt-l">
       <action name="Execute">
         <name>lock</name>
-        <command>i3lock-fancy</command>
+        <command>/home/ntapz/.bin/lock.sh</command>
       </action>
     </keybind>
     <keybind key="S-W-1">
@@ -254,7 +254,7 @@
     </keybind>
     <keybind key="Print">
       <action name="Execute">
-	<command>~/.bin/maim.sh</command>
+        <command>~/.bin/maim.sh</command>
       </action>
     </keybind>
     <!--    <keybind key="A-Print">
@@ -263,12 +263,12 @@
       </action> -->
     <keybind key="A-Print">
       <action name="Execute">
-        <command>xfce4-screenshooter</command>
+        <command>/home/ntapz/.bin/maim2.sh</command>
       </action>
     </keybind>
     <keybind key="W-f">
       <action name="Execute">
-        <command>al-filemanager</command>
+        <command>pcmanfm</command>
       </action>
     </keybind>
     <keybind key="W-t">
@@ -278,7 +278,7 @@
     </keybind>
     <keybind key="C-A-t">
       <action name="Execute">
-        <command>al-terminal</command>
+        <command>tabbed -r 2 st -w ''</command>
       </action>
     </keybind>
     <keybind key="S-A-Return">
@@ -330,7 +330,7 @@
         <command>xkill</command>
       </action>
     </keybind>
-    <keybind key="A-F4">
+    <keybind key="S-A-c">
       <action name="Close"/>
     </keybind>
     <keybind key="A-F5">
