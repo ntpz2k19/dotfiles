@@ -1,9 +1,29 @@
 #!/bin/bash
-xrandr --output DP-1 --mode 1366x768 --pos 0x0 --rotate normal --output HDMI-1 --off --output HDMI-2 --primary --mode 1600x900 --pos 1366x0 --rotate normal &
+# set dual monitor, you can generate manually using arandr (i use that too)
+#xrandr --output DP-1 --mode 1366x768 --pos 0x0 --rotate normal --output HDMI-1 --off --output HDMI-2 --primary --mode 1600x900 --pos 1366x0 --rotate normal &
+
+# enable dpms for power saving
 xset +dpms &
+
+# wallpaper using feh
 feh --bg-scale ~/.background.jpg &
+
+# keyboard delay & repeat rate
 xset r rate 160 23 &
+
+# enable synaptic for stouchpad tap click
+synclient TapButton1=1 &
+
+# decrease toucpad pointer and scrolling speed
+xinput --set-prop "SynPS/2 Synaptics TouchPad" "Device Accel Constant Deceleration" 2 &
+xinput set-prop 10 "Synaptics Scrolling Distance" 220, 220
+
+
+# use polkit
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-redshift -O 5500 &
+#redshift -O 5500 &
+
+# use panel
 tint2 &
+
 exec openbox
