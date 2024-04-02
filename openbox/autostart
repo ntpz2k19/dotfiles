@@ -1,12 +1,2 @@
-# start the panel
-tint2 &
-
-# load wallpaper
-nitrogen --restore &
-
-# load redshift
-redshift -O 5000 &
-
-
-# start polkit
-lxqt-policykit-agent
+# start to-do-list
+mousepad ~/to-do-list.txt

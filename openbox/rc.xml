@@ -61,13 +61,14 @@
     </font>
   </theme>
   <desktops>
-    <number>3</number>
+    <number>5</number>
     <firstdesk>0</firstdesk>
     <names>
       <name>1</name>
       <name>2</name>
       <name>3</name>
       <name>4</name>
+      <name>5</name>
     </names>
     <popupTime>800</popupTime>
   </desktops>
@@ -120,13 +121,24 @@
         <to>4</to>
       </action>
     </keybind>
+    <keybind key="W-5">
+      <action name="GoToDesktop">
+        <to>5</to>
+      </action>
+    </keybind>
+    <keybind key="F4">
+      <action name="Execute">
+        <name>play/pause audacious</name>
+        <command>audacious --play-pause</command>
+      </action>
+    </keybind>
     <keybind key="Alt-d">
       <action name="Execute">
         <name>dmenu</name>
         <command>dmenu_run -c -l 18</command>
       </action>
     </keybind>
-    <keybind key="Alt-l">
+    <keybind key="W-l">
       <action name="Execute">
         <name>lock</name>
         <command>/home/ntapz/.bin/lock.sh</command>
@@ -283,7 +295,7 @@
     </keybind>
     <keybind key="S-A-Return">
       <action name="Execute">
-        <command>st</command>
+        <command>tabbed -r 2 st -w ''</command>
       </action>
     </keybind>
     <keybind key="W-w">
@@ -303,7 +315,7 @@
     </keybind>
     <keybind key="A-p">
       <action name="Execute">
-        <command>rofi_run -r</command>
+        <command>pavucontrol</command>
       </action>
     </keybind>
     <keybind key="W-x">

@@ -6,17 +6,18 @@
 xset +dpms &
 
 # wallpaper using feh
-feh --bg-scale ~/.background.jpg &
+feh --bg-scale ~/.background.png &
 
 # keyboard delay & repeat rate
-xset r rate 160 23 &
+xset r rate 180 20 &
 
-# enable synaptic for stouchpad tap click
+# enable synaptic for touchpad tap click
 synclient TapButton1=1 &
 
 # decrease toucpad pointer and scrolling speed
+# you can modify it using xinput --list-pros <device-number>
 xinput --set-prop "SynPS/2 Synaptics TouchPad" "Device Accel Constant Deceleration" 2 &
-xinput set-prop 10 "Synaptics Scrolling Distance" 220, 220
+xinput --set-prop "SynPS/2 Synaptics TouchPad" "Synaptics Scrolling Distance" -500, 500 &
 
 
 # use polkit
@@ -25,5 +26,19 @@ exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 # use panel
 tint2 &
+# run clipboard
+xclip &
 
+# run pipewire at startup
+#/usr/bin/pipewire &
+#/usr/bin/pipewire-pulse &
+#/usr/bin/pipewire-media-session &
+#/usr/bin/wireplumber &
+
+#run nm-applet
+nm-applet &
+
+
+
+# start openbox
 exec openbox
