@@ -3,11 +3,13 @@ xterm*foreground: white
 XTerm*selectToClipboard: true
 xterm*font: *-fixed-*-*-*-18-*
 
+#disable default keybind
+URxvt.keysym.Control-Meta-c: builtin-string:
+URxvt.keysym.Control-Meta-v: builtin-string:
+#enable C-S-c C-S-v for copy paste
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 
-#URxvt.perl-ext:
-#URxvt.perl-ext-common:
-#URxvt.keysym.M-c:   perl:clipboard:copy
-#URxvt.keysym.M-v:   perl:clipboard:paste
 URxvt*background: black
 URxvt*foreground: white
 URxvt.termName: rxvt-unicode-256color
