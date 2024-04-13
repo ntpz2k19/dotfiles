@@ -1,0 +1,15 @@
+xterm*background: black
+xterm*foreground: white
+XTerm*selectToClipboard: true
+xterm*font: *-fixed-*-*-*-18-*
+
+
+#URxvt.perl-ext:
+#URxvt.perl-ext-common:
+#URxvt.keysym.M-c:   perl:clipboard:copy
+#URxvt.keysym.M-v:   perl:clipboard:paste
+URxvt*background: black
+URxvt*foreground: white
+URxvt.termName: rxvt-unicode-256color
+#URxvt*font: xft:Monospace:size=10:antialias=true
+URxvt.font: xft:MesloLGS NF:size=10:antialias=true
