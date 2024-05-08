@@ -13,6 +13,8 @@ xset r rate 180 20 &
 
 # enable synaptic for touchpad tap click
 synclient TapButton1=1 &
+# enable synaptic for disable click while typing
+syndaemon -i 0.5 -t -K -R &
 
 # decrease toucpad pointer and scrolling speed
 # you can modify it using xinput --list-pros <device-number>
