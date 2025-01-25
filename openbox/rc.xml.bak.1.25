@@ -61,17 +61,14 @@
     </font>
   </theme>
   <desktops>
-    <number>8</number>
+    <number>5</number>
     <firstdesk>0</firstdesk>
     <names>
       <name>1</name>
       <name>2</name>
       <name>3</name>
       <name>4</name>
-      <name>Q</name>
-      <name>W</name>
-      <name>E</name>
-      <name>R</name>
+      <name>5</name>
     </names>
     <popupTime>800</popupTime>
   </desktops>
@@ -124,24 +121,9 @@
         <to>4</to>
       </action>
     </keybind>
-    <keybind key="W-q">
+    <keybind key="W-5">
       <action name="GoToDesktop">
         <to>5</to>
-      </action>
-    </keybind>
-    <keybind key="W-w">
-      <action name="GoToDesktop">
-        <to>6</to>
-      </action>
-    </keybind>
-    <keybind key="W-e">
-      <action name="GoToDesktop">
-        <to>7</to>
-      </action>
-    </keybind>
-    <keybind key="W-r">
-      <action name="GoToDesktop">
-        <to>8</to>
       </action>
     </keybind>
     <keybind key="F4">
@@ -153,19 +135,13 @@
     <keybind key="Alt-d">
       <action name="Execute">
         <name>dmenu</name>
-        <command>dmenu_run -c -l 18 -p "Run:"</command>
+        <command>dmenu_run -c -l 18</command>
       </action>
     </keybind>
     <keybind key="W-l">
       <action name="Execute">
         <name>lock</name>
         <command>/home/ntapz/.bin/lock.sh</command>
-      </action>
-    </keybind>
-    <keybind key="S-W-l">
-      <action name="Execute">
-        <name>lock</name>
-        <command>/home/ntapz/.bin/sleep.sh</command>
       </action>
     </keybind>
     <keybind key="S-W-1">
@@ -302,14 +278,9 @@
         <command>/home/ntapz/.bin/maim2.sh</command>
       </action>
     </keybind>
-    <keybind key="S-Print">
-      <action name="Execute">
-        <command>/home/ntapz/.bin/maim3.sh</command>
-      </action>
-    </keybind>
     <keybind key="W-f">
       <action name="Execute">
-        <command>thunar</command>
+        <command>pcmanfm</command>
       </action>
     </keybind>
     <keybind key="W-t">
@@ -317,19 +288,19 @@
         <command>al-terminal</command>
       </action>
     </keybind>
-    <!--    <keybind key="C-A-t">
-      <action name="Execute">
-        <command>urxvt -e tmux</command>
-      </action>
-    </keybind> -->
     <keybind key="C-A-t">
       <action name="Execute">
-        <command>tabbed -r 2 urxvt -embed ''</command>
+        <command>tabbed -r 2 st -w ''</command>
       </action>
     </keybind>
     <keybind key="S-A-Return">
       <action name="Execute">
         <command>tabbed -r 2 st -w ''</command>
+      </action>
+    </keybind>
+    <keybind key="W-w">
+      <action name="Execute">
+        <command>al-browser</command>
       </action>
     </keybind>
     <keybind key="W-v">
@@ -352,11 +323,11 @@
         <command>rofi_run -l</command>
       </action>
     </keybind>
-    <!--    <keybind key="C-A-Delete">
+    <keybind key="C-A-Delete">
       <action name="Execute">
         <command>rofi_run -l</command>
       </action>
-    </keybind> -->
+    </keybind>
     <keybind key="W-S-Escape">
       <action name="Exit"/>
     </keybind>
@@ -394,6 +365,9 @@
     </keybind>
     <keybind key="A-m">
       <action name="Move"/>
+    </keybind>
+    <keybind key="W-q">
+      <action name="Close"/>
     </keybind>
     <keybind key="W-space">
       <action name="ShowMenu">

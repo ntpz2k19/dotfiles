@@ -1,4 +1,4 @@
 #!/bin/sh
-vbetool dpms off
+sudo vbetool dpms off
 read -n 1 -s -r -p 
-vbetool dpms on
+sudo vbetool dpms on

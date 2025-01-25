@@ -1,6 +1,7 @@
 #/bin/sh
-read -p "sebut proses yang akan dimatikan: " a
-kill -9 $(pidof $a)
+#read -p "sebut proses yang akan dimatikan: " a
+#echo "gaming"
+kill -9 $(pidof $*)
 if [ $? -eq 0 ]
   then
     echo "proses $a telah dimatikan"
