@@ -1,9 +1,72 @@
-#!/bin/bash
+#!/bin/sh
+
+userresources=$HOME/.Xresources
+usermodmap=$HOME/.Xmodmap
+sysresources=/etc/X11/xinit/.Xresources
+sysmodmap=/etc/X11/xinit/.Xmodmap
+
+# merge in defaults and keymaps
+
+if [ -f $sysresources ]; then
+
+
+
+
+
+
+
+    xrdb -merge $sysresources
+
+fi
+
+if [ -f $sysmodmap ]; then
+    xmodmap $sysmodmap
+fi
+
+if [ -f "$userresources" ]; then
+
+
+
+
+
+
+
+    xrdb -merge "$userresources"
+
+fi
+
+if [ -f "$usermodmap" ]; then
+    xmodmap "$usermodmap"
+fi
+
+# start some nice programs
+
+if [ -d /etc/X11/xinit/xinitrc.d ] ; then
+ for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
+  [ -x "$f" ] && . "$f"
+ done
+ unset f
+fi
+
+#twm &
+#xclock -geometry 50x50-1+1 &
+#xterm -geometry 80x50+494+51 &
+#xterm -geometry 80x20+494-0 &
+#exec xterm -geometry 80x66+0+0 -name login
+#exec xterm -geometry 80x66+0+0 -name login
 # set dual monitor, you can generate manually using arandr (i use that too)
 #xrandr --output DP-1 --mode 1366x768 --pos 0x0 --rotate normal --output HDMI-1 --off --output HDMI-2 --primary --mode 1600x900 --pos 1366x0 --rotate normal &
 
 # enable dpms for power saving
 xset +dpms &
+
+#export x11
+export XDG_SESSION_TYPE=x11 &
+
+
+# ini buat dual monitor gaming yak
+# cek dulu pake xrandr, nanti tentuin perangkatnya apa aja sama mana yg mau dijadiin primary, di kiri atau di kanan.
+# xrandr --output eDP1 --primary --auto --output HDMI2 --right-of eDP1 --auto
 
 # wallpaper using feh
 feh --bg-scale ~/.background.png &
@@ -13,13 +76,20 @@ xset r rate 180 20 &
 
 # enable synaptic for touchpad tap click
 synclient TapButton1=1 &
-# enable synaptic for disable click while typing
+synclient HorizTwoFingerScroll=1 &
+synclient HorizScrollDelta=-300 &
+
+## disable touch click while typing
 syndaemon -i 0.5 -t -K -R &
+
+#disable capslocks, just my own preferences cuz it bother me allot
+setxkbmap -option caps:none
+
 
 # decrease toucpad pointer and scrolling speed
 # you can modify it using xinput --list-pros <device-number>
 xinput --set-prop "SynPS/2 Synaptics TouchPad" "Device Accel Constant Deceleration" 2 &
-xinput --set-prop "SynPS/2 Synaptics TouchPad" "Synaptics Scrolling Distance" -500, 500 &
+xinput --set-prop "SynPS/2 Synaptics TouchPad" "Synaptics Scrolling Distance" -300, 300 &
 
 
 # use polkit
